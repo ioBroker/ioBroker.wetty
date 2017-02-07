@@ -1,0 +1,64 @@
+{
+    "common": {
+        "name":                     "wetty",
+        "version":                  "0.1.0",
+        "title":                    "ioBroker simple wetty Adapter",
+        "desc": {
+            "en":                   "opens a wetty server for the ioBroker",
+            "de":                   "Stellt wetty server für 'ioBroker' zur Verfügung",
+            "ru":                   "Запускает терминал для 'ioBroker'"
+        },
+        "mode":                     "daemon",
+        "platform":                 "Javascript/Node.js",
+        "loglevel":                 "info",
+        "icon":                     "wetty.png",
+        "readme":                   "https://github.com/ioBroker/ioBroker.wetty/blob/master/README.md",
+        "enabled":                  false,
+        "os":                       ["linux", "darwin"],
+        "keywords":                 ["wetty", "terminal", "console"],
+        "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.wetty/master/admin/wetty.png",
+        "type":                     "service",
+        "stopBeforeUpdate":         true,
+
+        "localLink":                "%protocol%://%ip%:%port%",
+        "adminTab": {
+            "link":                 "%protocol%://%ip%:%port%"
+        }
+    },
+    "native": {
+        "port":                     8088,
+        "auth":                     false,
+        "secure":                   false,
+        "bind":                     "0.0.0.0",
+        "sshPort":                  22,
+        "forceWebSockets":          false,
+		"globalSSHUser":            "root",
+        "leEnabled":                false
+    },
+    "objects": [
+        {
+            "_id":  "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id":  "info.connection",
+            "type": "state",
+            "common": {
+                "role":  "indicator.connected",
+                "name":  "If some clients connected",
+                "type":  "string",
+                "read":  true,
+                "write": false,
+                "def":   ""
+            },
+            "native": {}
+        }
+    ],
+    "instanceObjects": [
+
+    ]
+}
