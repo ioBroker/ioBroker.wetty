@@ -332,7 +332,19 @@ function initWebServer(settings) {
             createSocket(server);
 
             server.app.use('/login/*', express.static(path.join(__dirname, 'public/login/')));
-            server.app.use('/', express.static(path.join(wetty, 'public/')));
+
+            var wettyPublic = express.static(path.join(wetty, 'public/'));
+
+            server.app.use('/', function (req, res, next) {
+                if (req.url === '/wetty/wetty.js') {
+                    res.sendfile(path.join(__dirname, 'public/wetty.js'));
+                } else
+                if (req.url === '/' || req.url === '/index.html') {
+                    res.sendfile(path.join(__dirname, 'public/index.html'));
+                } else {
+                    wettyPublic(req, res, next);
+                }
+            });
         });
     } else {
         adapter.log.error('port missing');
