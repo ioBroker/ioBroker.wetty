@@ -26,7 +26,7 @@
         }
     },
     "native": {
-        "port":                     8088,
+        "port":                     8089,
         "auth":                     false,
         "secure":                   false,
         "bind":                     "0.0.0.0",
