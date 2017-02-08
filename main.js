@@ -335,11 +335,11 @@ function initWebServer(settings) {
 
             var wettyPublic = express.static(path.join(wetty, 'public/'));
 
-            server.app.use('/', function (req, res, next) {
+            server.app.use(function (req, res, next) {
                 if (req.url === '/wetty/wetty.js') {
                     res.sendfile(path.join(__dirname, 'public/wetty.js'));
                 } else
-                if (req.url === '/' || req.url === '/index.html') {
+                if (!req.url || req.url === '/' || req.url[0] === '?' || req.url.substring(0, 2) === '/?' || req.url === '/index.html') {
                     res.sendfile(path.join(__dirname, 'public/index.html'));
                 } else {
                     wettyPublic(req, res, next);

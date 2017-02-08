@@ -17,6 +17,6 @@ Also it uses websockets instead of Ajax and hence better response time.
 
 ## Changelog
 
-#### 0.1.0
+#### 0.1.1
 * (bluefox) inital commit
 
