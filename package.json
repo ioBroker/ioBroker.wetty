@@ -57,7 +57,7 @@
   },
   "main": "main.js",
   "scripts": {
-    "test": "node lib/web-wetty/test/index.js && node node_modules/mocha/bin/mocha"
+    "test": "node node_modules/mocha/bin/mocha"
   },
   "license": "MIT",
   "maintainers": [
