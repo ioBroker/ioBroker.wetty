@@ -19,7 +19,7 @@
         "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.wetty/master/admin/wetty.png",
         "type":                     "service",
         "stopBeforeUpdate":         true,
-
+		"fa-icon":                  "fa-terminal",
         "localLink":                "%protocol%://%ip%:%port%",
         "adminTab": {
             "link":                 "%protocol%://%ip%:%port%"
