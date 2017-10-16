@@ -1,43 +1,56 @@
 {
     "common": {
-        "name":                     "wetty",
-        "version":                  "0.1.1",
-        "title":                    "ioBroker simple wetty Adapter",
+        "name": "wetty",
+        "version": "0.1.1",
+        "title": "ioBroker simple wetty Adapter",
         "desc": {
-            "en":                   "opens a wetty server for the ioBroker",
-            "de":                   "Stellt wetty server für 'ioBroker' zur Verfügung",
-            "ru":                   "Запускает терминал для 'ioBroker'"
+            "en": "opens a wetty server for the ioBroker",
+            "de": "Stellt wetty server für 'ioBroker' zur Verfügung",
+            "ru": "Запускает терминал для 'ioBroker'"
         },
-        "mode":                     "daemon",
-        "platform":                 "Javascript/Node.js",
-        "loglevel":                 "info",
-        "icon":                     "wetty.png",
-        "readme":                   "https://github.com/ioBroker/ioBroker.wetty/blob/master/README.md",
-        "enabled":                  false,
-        "os":                       ["linux", "darwin"],
-        "keywords":                 ["wetty", "terminal", "console"],
-        "extIcon":                  "https://raw.githubusercontent.com/ioBroker/ioBroker.wetty/master/admin/wetty.png",
-        "type":                     "service",
-        "stopBeforeUpdate":         true,
-        "localLink":                "%protocol%://%ip%:%port%",
+        "mode": "daemon",
+        "platform": "Javascript/Node.js",
+        "loglevel": "info",
+        "icon": "wetty.png",
+        "readme": "https://github.com/ioBroker/ioBroker.wetty/blob/master/README.md",
+        "enabled": false,
+        "os": [
+            "linux",
+            "darwin"
+        ],
+        "keywords": [
+            "wetty",
+            "terminal",
+            "console"
+        ],
+        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.wetty/master/admin/wetty.png",
+        "type": "utility",
+        "stopBeforeUpdate": true,
+        "localLink": "%protocol%://%ip%:%port%",
         "adminTab": {
-            "link":                 "%protocol%://%ip%:%port%",
-			"fa-icon":              "fa-terminal"
-        }
+            "link": "%protocol%://%ip%:%port%",
+            "fa-icon": "fa-terminal"
+        },
+        "authors": [
+            {
+                "name": "bluefox",
+                "email": "dogafox@gmail.com"
+            }
+        ]
     },
     "native": {
-        "port":                     8089,
-        "auth":                     false,
-        "secure":                   false,
-        "bind":                     "0.0.0.0",
-        "sshPort":                  22,
-        "forceWebSockets":          false,
-		"globalSSHUser":            "root",
-        "leEnabled":                false
+        "port": 8089,
+        "auth": false,
+        "secure": false,
+        "bind": "0.0.0.0",
+        "sshPort": 22,
+        "forceWebSockets": false,
+        "globalSSHUser": "root",
+        "leEnabled": false
     },
     "objects": [
         {
-            "_id":  "info",
+            "_id": "info",
             "type": "channel",
             "common": {
                 "name": "Information"
@@ -45,20 +58,18 @@
             "native": {}
         },
         {
-            "_id":  "info.connection",
+            "_id": "info.connection",
             "type": "state",
             "common": {
-                "role":  "indicator.connected",
-                "name":  "If some clients connected",
-                "type":  "string",
-                "read":  true,
+                "role": "indicator.connected",
+                "name": "If some clients connected",
+                "type": "string",
+                "read": true,
                 "write": false,
-                "def":   ""
+                "def": ""
             },
             "native": {}
         }
     ],
-    "instanceObjects": [
-
-    ]
+    "instanceObjects": []
 }
