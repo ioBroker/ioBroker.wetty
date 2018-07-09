@@ -6,7 +6,7 @@ var utils     = require(__dirname + '/lib/utils'); // Get common adapter utils
 var express   = require('express');
 var socketio  = require('socket.io');
 var LE        = require(utils.controllerDir + '/lib/letsencrypt.js');
-var wetty     = require.resolve('wetty');
+var wetty     = require.resolve('wetty.js');
 var path      = require('path');
 var pty;
 
@@ -104,7 +104,7 @@ function onAuthorizeFail(data, message, error, accept) {
 
 function createSocket(server) {
     server.io = socketio(server.server, {path: '/wetty/socket.io'});
-    
+
     server.io.on('connection', function (socket){
         var sshuser = '';
         var request = socket.request;
@@ -112,16 +112,16 @@ function createSocket(server) {
         adapter.log.info((new Date()) + ' Connection accepted.');
 
         updateConnectedInfo();
-        
+
         var match;
-        
+
         if (match = request.headers.referer.match('/wetty/ssh/.+$')) {
             sshuser = match[0].replace('/wetty/ssh/', '') + '@';
         } else if (adapter.config.globalSSHUser) {
             sshuser = adapter.config.globalSSHUser + '@';
         }
 
-        pty = pty || require('pty.js');
+        pty = pty || require('node-pty');
         var term;
         if (process.getuid && process.getuid() === 0) {
             term = pty.spawn('/bin/login', [], {
