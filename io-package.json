@@ -29,7 +29,7 @@
         "localLink": "%protocol%://%ip%:%port%",
         "adminTab": {
             "link": "%protocol%://%ip%:%port%",
-            "fa-icon": "fa-terminal"
+            "fa-icon": "subtitles"
         },
         "authors": [
             {
