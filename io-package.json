@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "wetty",
-        "version": "0.1.1",
+        "version": "0.2.1",
         "title": "ioBroker simple wetty Adapter",
         "desc": {
             "en": "opens a wetty server for the ioBroker",
