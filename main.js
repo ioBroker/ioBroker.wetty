@@ -121,7 +121,7 @@ function createSocket(server) {
             sshuser = adapter.config.globalSSHUser + '@';
         }
 
-        pty = pty || require('pty.js');
+        pty = pty || require('node-pty');
         var term;
         if (process.getuid && process.getuid() === 0) {
             term = pty.spawn('/bin/login', [], {

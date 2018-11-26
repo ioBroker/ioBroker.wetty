@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "wetty.js": "^0.5.1",
-    "pty.js": "^0.3.0",
+    "node-pty": "^0.7.6",
     "socket.io": "^1.5.1",
     "request": "^2.76.0",
     "express": "^4.14.0",
