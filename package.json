@@ -31,7 +31,7 @@
     "url": "https://github.com/ioBroker/ioBroker.wetty"
   },
   "dependencies": {
-    "wetty.js": "^0.5.1",
+    "wetty.js": "krishnasrinivas/wetty",
     "node-pty": "^0.7.6",
     "socket.io": "^1.5.1",
     "request": "^2.76.0",
