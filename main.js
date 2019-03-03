@@ -2,7 +2,7 @@
 /*jslint node: true */
 'use strict';
 
-var utils     = require(__dirname + '/lib/utils'); // Get common adapter utils
+var utils = require('@iobroker/adapter-core'); // Get common adapter utils
 var express   = require('express');
 var socketio  = require('socket.io');
 var LE        = require(utils.controllerDir + '/lib/letsencrypt.js');
