@@ -1,7 +1,7 @@
 ![Logo](admin/wetty.png)
 
 # ioBroker.wetty
-
+![Number of Installations](http://iobroker.live/badges/wetty-installed.svg) ![Number of Installations](http://iobroker.live/badges/wetty-stable.svg) 
 Based on [wetty](https://github.com/krishnasrinivas/wetty).
 
 Wetty = Web + tty. Terminal access in browser over http/https
