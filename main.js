@@ -321,7 +321,14 @@ function initWebServer(settings) {
             }
             settings.port = port;
 
-            server.server = LE.createServer(server.app, settings, settings.certificates, settings.leConfig, adapter.log);
+            try {
+                server.server = LE.createServer(server.app, settings, settings.certificates, settings.leConfig, adapter.log);
+            } catch (err) {
+                adapter.log.error(`Cannot create webserver: ${err}`);
+                adapter.terminate ? adapter.terminate(1) : process.exit(1);
+                return;
+            }
+
             let serverListening = false;
             server.server.on('error', e => {
                 if (e.toString().includes('EACCES') && port <= 1024) {
